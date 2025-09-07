@@ -1,7 +1,7 @@
 # Proyecto CFP – Entrega 1  
 **Materia:** Conceptos Fundamentales de Programación  
 **Institución:** Politécnico Grancolombiano  
-**Estudiante:** *[tu nombre aquí]*  
+**Grupo:** *CFP-G3*  
 
 ---
 
