@@ -27,7 +27,7 @@ El programa se implementó en **Eclipse**, en una clase llamada `GenerateInfoFil
      ```
 
 2. **`salesmen_info.txt`**  
-   - Contiene la lista de vendedores (usando personajes de la serie Friends).  
+   - Contiene la lista de vendedores.  
    - Cada línea tiene el formato:  
      ```
      TipoDocumento;NúmeroDocumento;Nombre;Apellido
@@ -81,13 +81,6 @@ CFP_Proyecto/
  │   └─ ...
  └─ README.md
 ```
-
----
-
-## ✅ Conclusión  
-Con esta entrega aprendí a:  
-- Generar archivos planos en Java.  
-- Usar `BufferedWriter` para escribir información.  
 - Trabajar con arreglos y valores aleatorios para simular datos.  
 - Documentar el código usando **JavaDoc**.  
 
