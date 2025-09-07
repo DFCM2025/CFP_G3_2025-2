@@ -81,7 +81,4 @@ CFP_Proyecto/
  │   └─ ...
  └─ README.md
 ```
-- Trabajar con arreglos y valores aleatorios para simular datos.  
-- Documentar el código usando **JavaDoc**.  
-
-Estos archivos son la base para las siguientes entregas, donde se deberán procesar los datos y generar reportes más avanzados.  
+Estos archivos son la base para las siguientes entregas, donde se deberán procesar los datos y generar reportes más avanzados.
