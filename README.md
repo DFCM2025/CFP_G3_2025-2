@@ -1,68 +1,81 @@
-# Proyecto CFP – Entrega 1  
-**Materia:** Conceptos Fundamentales de Programación - B01 (2025)  
+# Proyecto CFP – Entregas 1 y 2  
+**Materia:** Conceptos Fundamentales de Programación  
 **Institución:** Politécnico Grancolombiano  
-**Grupo:** *CFP-G3*  
+**Estudiante:** *[tu nombre aquí]*  
 
 ---
 
 ## 📌 Descripción  
-Esta es la **primera entrega del proyecto**.  
-El objetivo fue crear un programa en **Java** que genere archivos planos de prueba, los cuales se usarán como entrada en las siguientes etapas del proyecto.  
+Este repositorio contiene las dos primeras entregas del proyecto de CFP.  
 
-El programa se implementó en **Eclipse**, en una clase llamada `GenerateInfoFiles`, que al ejecutarse genera automáticamente varios archivos dentro de una carpeta llamada `input/`.  
+- En la **primera entrega** se construyó un generador de archivos de prueba (`GenerateInfoFiles`), que crea los archivos base de productos, vendedores y ventas.  
+- En la **segunda entrega** se desarrolló un procesador de archivos (`ProcessSales`), encargado de validar la información y consolidar un reporte con los datos de ventas.  
 
 ---
 
-## 📂 Archivos generados  
+## 📂 Archivos generados y procesados  
 
+### Primera Entrega (`generator/GenerateInfoFiles.java`)  
 1. **`products.txt`**  
-   - Contiene la lista de productos de la cafetería Tostao.  
-   - Cada línea tiene el formato:  
-     ```
-     IDProducto;NombreProducto;Precio
-     ```
-   - Ejemplo:  
-     ```
-     P1;Café Americano;3500
-     ```
+   ```
+   IDProducto;NombreProducto;Precio
+   ```
+   Ejemplo:  
+   ```
+   P1;Café Americano;3500
+   ```
 
 2. **`salesmen_info.txt`**  
-   - Contiene la lista de vendedores.  
-   - Cada línea tiene el formato:  
-     ```
-     TipoDocumento;NúmeroDocumento;Nombre;Apellido
-     ```
-   - Ejemplo:  
-     ```
-     CC;45283910;Rachel;Green
-     ```
+   ```
+   TipoDocumento;NúmeroDocumento;Nombre;Apellido
+   ```
+   Ejemplo:  
+   ```
+   CC;45283910;Rachel;Green
+   ```
 
-3. **Archivos de ventas por vendedor**  
-   - Un archivo por cada vendedor, nombrado así:  
-     ```
-     sales_{Nombre}_{Documento}.txt
-     ```
-   - La primera línea identifica al vendedor.  
-   - Las siguientes líneas corresponden a productos vendidos:  
-     ```
-     IDProducto;Cantidad;
-     ```
-   - Ejemplo:  
-     ```
-     CC;45283910
-     P3;2;
-     P7;5;
-     ```
+3. **`sales_{Nombre}_{Documento}.txt`**  
+   ```
+   CC;45283910
+   P3;2;
+   P7;5;
+   ```
+
+---
+
+### Segunda Entrega (`processor/ProcessSales.java`)  
+- Lee todos los archivos de `input/`.  
+- Valida que los productos existan y que las cantidades sean positivas.  
+- Reporta inconsistencias en consola (⚠ advertencias, ❌ errores de formato).  
+- Genera el archivo `output/report.txt` con el consolidado:  
+
+```
+Producto;CantidadTotal;TotalVendidoCOP
+Café Americano;15;52500
+Brownie;10;45000
+...
+```
 
 ---
 
 ## ⚙️ Funcionamiento  
-- El programa no pide datos al usuario.  
-- Todo se genera automáticamente de forma pseudoaleatoria.  
-- Al finalizar, muestra en consola:  
-  ```
-  Generación de archivos completada con éxito.
-  ```
+
+1. **Generar datos de prueba**  
+   Ejecutar `GenerateInfoFiles` (paquete `generator`).  
+   Esto crea los archivos en la carpeta `input/`.  
+
+2. **Procesar y consolidar ventas**  
+   Ejecutar `ProcessSales` (paquete `processor`).  
+   Esto produce el archivo `output/report.txt` con el resumen de ventas.  
+
+3. **Mensajes en consola**  
+   El sistema informa problemas encontrados, por ejemplo:  
+   ```
+   📂 Procesando: sales_Rachel_45283910.txt
+   ⚠ Producto no existe: P25
+   ⚠ Cantidad inválida: -3
+   ✅ Reporte generado en output/report.txt
+   ```
 
 ---
 
@@ -71,14 +84,25 @@ El programa se implementó en **Eclipse**, en una clase llamada `GenerateInfoFil
 ```
 CFP_Proyecto/
  ├─ src/
- │   └─ generator/
- │       └─ GenerateInfoFiles.java
+ │   ├─ generator/
+ │   │   └─ GenerateInfoFiles.java
+ │   └─ processor/
+ │       └─ ProcessSales.java
  ├─ input/
  │   ├─ products.txt
  │   ├─ salesmen_info.txt
  │   ├─ sales_Rachel_45283910.txt
- │   ├─ sales_Ross_23840192.txt
  │   └─ ...
+ ├─ output/
+ │   └─ report.txt
  └─ README.md
 ```
-Estos archivos son la base para las siguientes entregas, donde se deberán procesar los datos y generar reportes más avanzados.
+
+---
+
+## ✅ Conclusiones  
+- En la **primera entrega** se aprendió a generar datos de prueba en archivos planos.  
+- En la **segunda entrega** se procesaron los archivos, se aplicaron validaciones de coherencia y se consolidó la información en un reporte.  
+- Se aplicaron buenas prácticas como el uso de métodos auxiliares, validación de entradas y documentación con **JavaDoc**.  
+
+Estas entregas conforman la base del proyecto, que seguirá evolucionando en fases posteriores.  
