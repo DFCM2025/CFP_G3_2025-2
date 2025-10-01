@@ -1,7 +1,7 @@
-# Proyecto CFP – Entregas 1 y 2  
+# Proyecto CFP G3 – Entregas 1 y 2  
 **Materia:** Conceptos Fundamentales de Programación  
 **Institución:** Politécnico Grancolombiano  
-**Estudiante:** *[tu nombre aquí]*  
+**Estudiantes:** *Yulieth Alejandra Salcedo Pérez, Herbert Ariza Pedraza, Daniel Felipe Cárdenas Manrique, Nexon David Veloza Forero*
 
 ---
 
